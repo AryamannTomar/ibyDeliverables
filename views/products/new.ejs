@@ -1,0 +1,30 @@
+<% layout('layouts/boilerplate')%>
+<div class='row'>
+    <h1 class='text-center'>New-News</h1>
+    <div class="col-6 offset-3">
+        <form action="/products" method="POST">
+            <div class='mb-3'>
+                <label class='form-label' for="name">Description: </label>
+                <textarea class='form-control' type="text" name="description" id="name" placeholder="Give Description" required></textarea>
+            </div>
+            <div class='mb-3'>
+                <label class='form-label' for="date">Date: </label>
+                <input class='form-control' type="date" id="date" name="date" placeholder="Add Date" required>
+            </div>
+            <div>
+                <label class='form-label' for="category">Select Category</label>
+                <select name="category" id="category">
+                    <% for(let category of categories){ %>
+                    <option value="<%=category%>"><%=category%></option>
+                    <% } %>
+                </select>
+            </div>
+            <span>
+                <button class='btn btn-success'>Submit</button>
+            </span>
+            <span>
+                <a href='/products' class='btn btn-danger'>Cancel</a>
+            </span>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<% layout('layouts/boilerplate')%>
+<h1>News</h1>
+<ul>
+    <% for(let news of products) { %>
+    <li>
+        <b><%=news.date%></b> [<i><%=news.category%></i>]<br>
+        <a href='/products/<%=news._id%>'><%=news.description%></a>
+    </li>
+    <% }%>
+</ul>
+<a type='btn' class='btn btn-info' href="/">Back</a>
+<a type='btn' class='btn btn-info' href="/products/new">Add News</a>

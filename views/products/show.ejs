@@ -1,0 +1,12 @@
+<% layout('layouts/boilerplate')%>
+<h1><%= product.date%></h1>
+<ul>
+    <li><b><u>Description</u>:-  </b><%= product.description%></li>
+    <li><b><u>Category</u>:-  </b><%= product.category %> </li>
+    <li><a href='<%= product.url%>'><b>URL</b></a></li> 
+</ul>
+<a href='/products' class='btn btn-info'>Back</a>
+<a href='/products/<%=product._id%>/edit' class='btn btn-info'>Edit</a>
+<form action="/products/<%=product._id%>?_method=DELETE" method="POST">
+    <button class='btn btn-danger'>Delete</button>
+</form>
